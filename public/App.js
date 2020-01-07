@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./App.css";
+const myStorage = window.localStorage;
 
 class Header extends React.Component {
   render() {
@@ -23,9 +24,11 @@ class ToDoInput extends React.Component {
 
 class ToDoList extends React.Component {
   render() {
-    const { list } = this.props;
-    const elementsListJSX = list.map(e => <li key={e.id}>{e.toDo}</li>);
-    return <ul>{elementsListJSX}</ul>;
+    var elementsList = []
+    for(var i = 0; i < parseInt(myStorage.getItem("nElements")); i++){
+      elementsList.push({id:i.toString(),toDo: myStorage.getItem(i.toString())})
+    }  
+    return <ul>{elementsList.map(e => <li key={e.id}>{e.toDo}</li>)}</ul>;
   }
 }
 
@@ -47,9 +50,17 @@ class Main extends React.Component {
     if(param === "")
       return
     this.setState({
-      elementsList: [...this.state.elementsList,{id:this.state.nElements+1,toDo: param}],
-      nElements: this.state.nElements + 1
+      nElements: this.state.nElements + 1,
+      elementsList: [...this.state.elementsList,{id:this.state.nElements,toDo: param}]
     })
+    if(myStorage.getItem("nElements") === null){
+      myStorage.setItem("nElements", "0")
+      myStorage.setItem(myStorage.getItem("nElements"),param)
+    }
+    else{
+      myStorage.setItem("nElements",(parseInt(myStorage.getItem("nElements")) + 1).toString())
+      myStorage.setItem(myStorage.getItem("nElements"),param)
+    }
     }
 
   render() {

@@ -2,6 +2,17 @@ body {
   background-color: #f9f9fa
 }
 
+h4{
+  font-size: 2em;
+  font-family: Helvetica;
+  color: #405189;
+}
+
+.add{
+  background-color: #405189;
+  color: white;
+}
+
 .flex {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
@@ -451,3 +462,4 @@ input[type="checkbox"] {
 .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item {
   display: flex !important
 }
+

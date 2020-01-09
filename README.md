@@ -6,7 +6,7 @@ Il programma utilizza la libreria [Reactjs](https://reactjs.org/) e il framework
 ![](https://github.com/Gianluca-Consiglio/to-do-list/blob/master/img/img1.png)
 - Eliminare To do
 ![](https://github.com/Gianluca-Consiglio/to-do-list/blob/master/img/img2.png)
-- Cancellare momentaneamente To do
+- Cancellare To do
 ![](https://github.com/Gianluca-Consiglio/to-do-list/blob/master/img/img3.png)
 
 ### Implementazione
